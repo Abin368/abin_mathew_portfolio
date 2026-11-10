@@ -84,7 +84,7 @@ export default function App() {
                 <a
                   href="/abin_mathew_fs.pdf"
                   download="Abin_Mathew_CV.pdf"
-                  className="btn btn-secondary"
+                  className="btn btn-secondary hero-cv"
                 >
                   Download CV ↓
                 </a>

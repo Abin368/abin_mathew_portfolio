@@ -650,6 +650,21 @@ a {
     padding: 2rem 1.5rem;
   }
 
+  .hero-cta-group {
+    gap: 0.55rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-cta-group .btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-cv {
+    display: none;
+  }
+
   .lanyard-container {
     height: 480px !important;
   }
