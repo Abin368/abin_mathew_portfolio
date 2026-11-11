@@ -76,9 +76,6 @@ export default function App() {
 
               <h1 className="hero-title">
                 Thoughtful systems. Seamless experiences.
-                <span className="hero-title-sub">
-                  Crafting quiet, minimal & high-performance software.
-                </span>
               </h1>
 
               <p className="hero-bio">{profile.bio}</p>

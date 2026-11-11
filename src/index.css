@@ -206,17 +206,6 @@ a {
   color: var(--text-primary);
 }
 
-.hero-title-sub {
-  display: block;
-  max-width: 16em;
-  margin-top: 0.9rem;
-  font-size: 0.46em;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.03em;
-  color: var(--text-muted);
-}
-
 .hero-bio {
   font-size: 1.15rem;
   line-height: 1.6;
