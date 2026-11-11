@@ -206,6 +206,17 @@ a {
   color: var(--text-primary);
 }
 
+.hero-title-sub {
+  display: block;
+  max-width: 16em;
+  margin-top: 0.9rem;
+  font-size: 0.46em;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: var(--text-muted);
+}
+
 .hero-bio {
   font-size: 1.15rem;
   line-height: 1.6;
@@ -606,6 +617,72 @@ a {
 
 .back-top-link:hover {
   opacity: 0.7;
+}
+
+/* Opening kinetic type */
+html:has(.kinetic-loader) {
+  overflow: hidden;
+}
+
+.kinetic-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--bg-color);
+  overflow: hidden;
+  perspective: 900px;
+}
+
+.kinetic-loader-text {
+  font-size: clamp(1.85rem, 6.4vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--text-primary);
+  white-space: nowrap;
+  transform-style: preserve-3d;
+}
+
+.kinetic-char {
+  display: inline-block;
+  animation-duration: 0.95s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.16, 0.84, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+@keyframes fly-in {
+  from {
+    opacity: 0;
+    transform: var(--transform-from);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@keyframes fly-out {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: var(--transform-to);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kinetic-char {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Responsiveness */

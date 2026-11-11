@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { profile } from "./content.js";
 import Lanyard from "./Lanyard";
+import { KineticTypographyLoader } from "./components/ui/loading-animation";
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "dark";
+    const saved = localStorage.getItem("theme") || "dark";
+    document.documentElement.setAttribute("data-theme", saved);
+    return saved;
   });
   const [copied, setCopied] = useState(false);
+  const [booting, setBooting] = useState(true);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -24,7 +28,9 @@ export default function App() {
   };
 
   return (
-    <div className="site-wrapper">
+    <>
+    {booting && <KineticTypographyLoader onFinished={() => setBooting(false)} />}
+    <div className="site-wrapper" inert={booting ? true : undefined}>
       {/* Navigation */}
       <header className="navbar">
         <a href="#top" className="brand-logo">
@@ -69,7 +75,10 @@ export default function App() {
               </div>
 
               <h1 className="hero-title">
-                Crafting quiet, minimal & high-performance software.
+                Thoughtful systems. Seamless experiences.
+                <span className="hero-title-sub">
+                  Crafting quiet, minimal & high-performance software.
+                </span>
               </h1>
 
               <p className="hero-bio">{profile.bio}</p>
@@ -292,5 +301,6 @@ export default function App() {
         </a>
       </footer>
     </div>
+    </>
   );
 }
